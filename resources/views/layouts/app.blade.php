@@ -5,6 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
         <title>Upwork</title>
+        <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+        @livewireStyles
 
     </head>
     <body>
@@ -13,5 +15,6 @@
           @yield('content')
       </div>
 
+      @livewireScripts
     </body>
 </html>

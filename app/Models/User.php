@@ -28,11 +28,18 @@ class User extends Authenticatable
     ];
 
 
-    public function role(){
+    public function role()
+    {
         return $this->belongsTo(Role::class);
     }
 
-    public function jobs(){
+    public function jobs()
+    {
         return $this->hasMany(Job::class);
+    }
+
+    public function likes()
+    {
+        return $this->belongsToMany(Job::class);
     }
 }

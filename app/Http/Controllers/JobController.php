@@ -14,7 +14,13 @@ class JobController extends Controller
         $jobs = Job::online()->latest()->get();
 
         return view('jobs.index',['jobs' => $jobs]);
+    }
 
-        // return $jobs;
+
+    public function show(Job $id){
+
+        return view('jobs.show',[
+            'job' => $id
+        ]);
     }
 }

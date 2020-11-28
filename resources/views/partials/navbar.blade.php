@@ -1,6 +1,8 @@
 <header class="flex justify-between items-center py-5">
     <div>Logo</div>
-    <nav>
+    <nav >
+        {{-- declare search component  --}}
+            <livewire:search />
             <a href="{{ route('jobs.index') }}" class="mr-5 hover:text-green-500">Nos Missions</a>
         @guest
             <a class="mr-5 hover:text-green-500" href="{{ route('login') }}">Se connecter</a>
