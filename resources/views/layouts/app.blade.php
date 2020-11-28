@@ -8,10 +8,15 @@
         <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
         @livewireStyles
 
+        <style>
+            [x-cloak] { display: none; }
+        </style>
+
     </head>
     <body>
       <div class="container mx-auto px-4">
           @include('partials.navbar')
+          <livewire:flash/>
           @yield('content')
       </div>
 

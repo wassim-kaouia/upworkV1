@@ -18,7 +18,7 @@ class Job extends Component
         //envoyer une error / flash messages
         else 
         {
-            $this->emi('flash','Merci de vous connecter pour pouvoir ajouter au favori','error');
+            $this->emit('flash','Merci de vous connecter pour pouvoir ajouter au favori','danger');
         }
 
 
