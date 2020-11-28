@@ -1,7 +1,7 @@
 <header class="flex justify-between items-center py-5">
     <div>Logo</div>
     <nav>
-            <a href="#" class="mr-5 hover:text-green-500">Nos Missions</a>
+            <a href="{{ route('jobs.index') }}" class="mr-5 hover:text-green-500">Nos Missions</a>
         @guest
             <a class="mr-5 hover:text-green-500" href="{{ route('login') }}">Se connecter</a>
             <a class="mr-5 hover:text-green-500" href="{{ route('register') }}">S'enregistrer</a>
