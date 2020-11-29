@@ -9,6 +9,7 @@
             <a class="mr-5 hover:text-green-500" href="{{ route('register') }}">S'enregistrer</a>
         @else
             <a class="mr-5 hover:text-green-500" href="{{ route('home') }}">Tableau de bord</a>
+            <a class="mr-5 hover:text-green-500" href="{{ route('conversation.index') }}">Messages</a>
             <a class="mr-5 hover:text-green-500" href="{{ route('logout') }}" onclick="event.preventDefault();
             document.getElementById('logout-form').submit();
             ">Se Déconnecter</a>

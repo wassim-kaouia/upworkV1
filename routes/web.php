@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\JobController;
 use App\Http\Controllers\ProposalController;
+use App\Http\Controllers\ConversationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +24,10 @@ Route::get('/jobs/{id}',[JobController::class,'show'])->name('jobs.show');
 
 
 Route::group(['middleware' => 'auth'],function(){
+
+    Route::get('/confirmProposal/{proposal}',[ProposalController::class,'confirm'])->name('proposals.confirm');
+    Route::get('/conversations' , [ConversationController::class , 'index'])->name('conversation.index');
+    Route::get('/conversations/{id}' , [ConversationController::class , 'show'])->name('conversation.show');
 
     Route::get('/', function () {
         return view('home');

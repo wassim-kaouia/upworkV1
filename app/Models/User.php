@@ -5,6 +5,7 @@ namespace App\Models;
 use App\Models\Job;
 use App\Models\Role;
 use App\Models\Proposal;
+use App\Models\Conversation;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -45,6 +46,18 @@ class User extends Authenticatable
     }
 
     public function proposals(){
+
         return $this->hasMany(Proposal::class);
+    }
+
+    public function conversations(){
+        
+        return Conversation::where(function($query){
+            return $query->where('to',$this->id)->orWhere('from',$this->id);
+        });
+    }
+
+    public function getConversationsAttributes(){
+        return $this->conversations->get();
     }
 }
