@@ -12,4 +12,13 @@
         </span>
     </div>
 
+    <section x-data="{open : false}" x-cloak>
+        <a href="#" class="text-green-500" @click="open = !open " >Soumettre Ma Candidature</a>
+        <form class="mt-2" x-show="open" action="{{ route('proposals.store',['job' => $job]) }}" method="POST" >
+            @csrf
+            <textarea name="content" class="border p-3 font-thin w-full max-w-md"></textarea>
+            <button class="block bg-green-700 text-white px-3 py-2">Soumettre ma lettre de motivation</button>
+        </form>
+    </section>
+
 @endsection

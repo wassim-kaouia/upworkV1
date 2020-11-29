@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Models\Job;
 use App\Models\Role;
+use App\Models\Proposal;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -41,5 +42,9 @@ class User extends Authenticatable
     public function likes()
     {
         return $this->belongsToMany(Job::class);
+    }
+
+    public function proposals(){
+        return $this->hasMany(Proposal::class);
     }
 }
